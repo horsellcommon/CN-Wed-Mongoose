@@ -16,3 +16,11 @@ const movieSchema = new mongoose.Schema({
 const Movie = mongoose.model("Movie", movieSchema);
 
 module.exports = Movie;
+
+/*
+Everything in Mongoose starts with a Schema.
+Organisation or structure for a collection inside a database.
+Essentially, it is a library that allows you to pass docs to a DBMS.
+Mongoose is an Object Document Mapping, defining the structure of your documents and the types of data-
+-you're storing.
+*/
