@@ -20,3 +20,11 @@ exports.readMovies = async (key, filter) => {
     console.log(error);
   }
 };
+
+exports.updateMovie = async (key, title) => {
+  try {
+    await Movie.updateOne({key, title});
+  } catch (error) {
+    console.log(error);
+  }
+};
