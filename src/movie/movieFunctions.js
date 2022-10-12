@@ -8,3 +8,15 @@ exports.createMovie = async (movieObject) => {
     console.log(error);
   }
 };
+
+exports.readMovies = async (key, filter) => {
+  try {
+    if (key) {
+      return await Movie.findOne({ [key]: filter });
+    } else {
+      return await Movie.find({}); //Returns all objects instead
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
