@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { number } = require("yargs");
 
 const movieSchema = new mongoose.Schema({
   title: {
@@ -9,6 +10,18 @@ const movieSchema = new mongoose.Schema({
   actor: {
     type: String,
     default: "Not Specified",
+  },
+  director: {
+    type: String,
+    default: "Not Specified",
+  },
+  genre: {
+    type: String,
+    default: "Not Specified",
+  },
+  year: {
+    type: Number,
+    default: "Not specified",
   },
 });
 

@@ -12,7 +12,13 @@ const app = async (yargsObject) => {
   try {
     if (yargsObject.create) {
       //C
-      await createMovie({ title: yargsObject.title, actor: yargsObject.actor });
+      await createMovie({
+        title: yargsObject.title,
+        actor: yargsObject.actor,
+        director: yargsObject.director,
+        genre: yargsObject.genre,
+        year: yargsObject.year,
+      });
       console.log("Adding film to database...");
       console.log(await readMovies());
     } else if (yargsObject.read) {
