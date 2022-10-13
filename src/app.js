@@ -5,6 +5,7 @@ const {
   createMovie,
   readMovies,
   updateMovie,
+  deleteMovie,
 } = require("./movie/movieFunctions");
 
 const app = async (yargsObject) => {
@@ -22,6 +23,7 @@ const app = async (yargsObject) => {
       console.log(await updateMovie(yargsObject.key, yargsObject.title));
     } else if (yargsObject.delete) {
       //D
+      console.log(await deleteMovie(yargsObject.title, yargsObject.actor));
     } else {
       console.log("Command Not Recognised.");
     }
