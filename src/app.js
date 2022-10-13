@@ -24,6 +24,7 @@ const app = async (yargsObject) => {
     } else if (yargsObject.delete) {
       //D
       console.log(await deleteMovie(yargsObject.title, yargsObject.actor));
+      console.log(await readMovies());
     } else {
       console.log("Command Not Recognised.");
     }

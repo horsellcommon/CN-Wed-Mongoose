@@ -29,9 +29,9 @@ exports.updateMovie = async (key, title) => {
   }
 };
 
-exports.deleteMovie = async () => {
+exports.deleteMovie = async (title) => {
   try {
-    await Movie.deleteOne({})
+    await Movie.deleteOne({title})
   } catch (error) {
     console.log(error)
   }
