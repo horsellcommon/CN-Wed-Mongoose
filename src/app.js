@@ -17,7 +17,7 @@ const app = async (yargsObject) => {
         actor: yargsObject.actor,
         director: yargsObject.director,
         genre: yargsObject.genre,
-        year: yargsObject.year,
+        released: yargsObject.released,
       });
       console.log("Adding film to database...");
       console.log(await readMovies());

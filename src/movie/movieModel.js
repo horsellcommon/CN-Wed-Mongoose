@@ -19,7 +19,7 @@ const movieSchema = new mongoose.Schema({
     type: String,
     default: "Not Specified",
   },
-  year: {
+  released: {
     type: Number,
     default: "Not specified",
   },
