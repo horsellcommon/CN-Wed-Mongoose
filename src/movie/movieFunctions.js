@@ -21,18 +21,18 @@ exports.readMovies = async (key, filter) => {
   }
 };
 
-exports.updateMovie = async (key, title) => {
+exports.updateMovie = async (filter, updated) => {
   try {
-    await Movie.updateOne({ key, title });
+    await Movie.updateOne(filter, {$set: updated});
   } catch (error) {
     console.log(error);
   }
 };
 
-exports.deleteMovie = async (title, actor) => {
+exports.deleteMovie = async (title) => {
   try {
-    await Movie.deleteOne({title, actor})
+    await Movie.deleteOne({ title });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};

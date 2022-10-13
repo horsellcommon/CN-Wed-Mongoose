@@ -26,18 +26,20 @@ const app = async (yargsObject) => {
       console.log(await readMovies(yargsObject.key, yargsObject.filter));
     } else if (yargsObject.update) {
       //U
-      console.log(await updateMovie(yargsObject.key, yargsObject.title));
+      console.log(await updateMovie(
+        {[yargsObject.filterKey]: yargsObject.filterValue},
+        {[yargsObject.updateKey]: yargsObject.updateValue}
+      ));
     } else if (yargsObject.delete) {
       //D
-      console.log(await deleteMovie(yargsObject.title, yargsObject.actor));
+      console.log(await deleteMovie(yargsObject.title));
       console.log(await readMovies());
     } else {
       console.log("Command Not Recognised.");
     }
-    await mongoose.disconnect; // ???? why not work ????
-    console.log("Press CTRL+C to disconnect");
+    await mongoose.disconnect();
   } catch (error) {
-    await mongoose.disconnect; // ????
+    await mongoose.disconnect();
     console.log(error);
   }
 };
